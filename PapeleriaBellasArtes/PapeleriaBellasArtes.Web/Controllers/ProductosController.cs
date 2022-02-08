@@ -1,4 +1,4 @@
-﻿using PapeleriaBellasArtes.Web.Models;
+﻿using PapeleriaBellasArtes.BL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,11 @@ namespace PapeleriaBellasArtes.Web.Controllers
         public ActionResult Index()
         {
 
-         return View();
+            //Agregamos produtos//
+            var productosBL = new ProductosBL();
+            var listadeProductos = productosBL.ObtenerProductos();   //Obtenemos productos
+
+         return View(listadeProductos);       //retornamos la lista de productos//
         }
     }
 }

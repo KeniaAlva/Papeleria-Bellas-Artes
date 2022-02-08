@@ -164,6 +164,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PapeleriaBellasArtes.BL\PapeleriaBellasArtes.BL.csproj">
+      <Project>{6c21dd4e-dfd6-4f4f-b94e-160267ab53ef}</Project>
+      <Name>PapeleriaBellasArtes.BL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
