@@ -10,7 +10,7 @@ namespace PapeleriaBellasArtes.BL
 {
     public class Contexto: DbContext
     {
-        public Contexto(): base(@"Data Source=(LocalDb) \MSSQLLocalDB;AttachDBFilename=" +
+        public Contexto(): base(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDBFilename=" +
             Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\PapeleriaBellasArtesDB.mdf")
         {
             
