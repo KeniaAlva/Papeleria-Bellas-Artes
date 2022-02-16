@@ -8,12 +8,13 @@ namespace PapeleriaBellasArtes.BL
 {
     public class ProductosBL
     {
-        Contexto _contexto;
+
+        Contexto _contexto;                 //Declaramos la variable contexto//
         public List<Producto> ListadeProductos { get; set; }
 
         public ProductosBL()
         {
-            _contexto = new Contexto();
+            _contexto = new Contexto();     //Inicializamos la variable//
             ListadeProductos = new List<Producto>();
         }
 
