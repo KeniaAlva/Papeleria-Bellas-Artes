@@ -10,7 +10,6 @@ namespace PapeleriaBellasArtes.BL
 {
     public class Contexto: DbContext
     {
-        //Conexion stream para la creacion de la BD//
         public Contexto(): base(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDBFilename=" +
             Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\PapeleriaBellasArtesDB.mdf")
         {
@@ -18,11 +17,12 @@ namespace PapeleriaBellasArtes.BL
 
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)    //Evita que se pluralicen los nombres de las tablas//
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
         public DbSet<Producto> Productos { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
     }
 }
