@@ -22,9 +22,22 @@ namespace PapeleriaBellasArtes.BL
         public List<Cliente> ObtenerClientes()
         {
 
-            ListadeClientes = _contexto.Clientes.ToList();
+            ListadeClientes = _contexto.Clientes
+            .OrderBy(r=> r.Nombre)    
+            .ToList();
             return ListadeClientes;
         }
+
+        public List<Cliente> ObtenerClientesActivos()
+        {
+
+            ListadeClientes = _contexto.Clientes
+            .Where(r=> r.Activo == true)
+            .OrderBy(r=> r.Nombre)   
+            .ToList();
+            return ListadeClientes;
+        }
+
         public void GuardarCliente(Cliente cliente)
         {
             if (cliente.Id == 0)

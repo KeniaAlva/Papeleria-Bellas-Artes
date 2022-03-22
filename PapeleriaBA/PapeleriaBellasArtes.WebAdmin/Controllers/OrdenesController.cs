@@ -29,7 +29,7 @@ namespace PapeleriaBellasArtes.WebAdmin.Controllers
         public ActionResult Crear()
         {
             var nuevaOrden = new Orden();
-            var clientes = _clienteBL.ObtenerClientes();
+            var clientes = _clienteBL.ObtenerClientesActivos();
 
             ViewBag.ClienteId = new SelectList(clientes, "Id", "Nombre");
 
@@ -54,7 +54,7 @@ namespace PapeleriaBellasArtes.WebAdmin.Controllers
 
             }
 
-            var clientes = _clienteBL.ObtenerClientes();
+            var clientes = _clienteBL.ObtenerClientesActivos();
 
             ViewBag.ClienteId = new SelectList(clientes, "Id", "Nombre");
 
@@ -64,7 +64,7 @@ namespace PapeleriaBellasArtes.WebAdmin.Controllers
         public ActionResult Editar(int id)
         {
             var orden = _ordenesBL.ObtenerOrden(id);
-            var clientes = _clienteBL.ObtenerClientes();
+            var clientes = _clienteBL.ObtenerClientesActivos();
 
             ViewBag.ClienteId = new SelectList(clientes, "Id", "Nombre", orden.ClienteId);
 
@@ -88,7 +88,7 @@ namespace PapeleriaBellasArtes.WebAdmin.Controllers
                 return RedirectToAction("Index");
             }
 
-            var clientes = _clienteBL.ObtenerClientes();
+            var clientes = _clienteBL.ObtenerClientesActivos();
 
             ViewBag.ClienteId = new SelectList(clientes, "Id", "Nombre", orden.ClienteId);
 
